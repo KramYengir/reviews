@@ -23,7 +23,7 @@ const Homepage = () => {
               )}
               ...
             </p>
-            <Link to={`/details/${review.id}`}>Read More</Link>
+            <Link to={`/review/${review.id}`}>Read More</Link>
           </div>
         ))}
     </>
