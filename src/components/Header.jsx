@@ -20,8 +20,6 @@ const Header = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Errrrrrror...</p>;
 
-  console.log("category: ", data);
-
   return (
     <header>
       <Link to="/">
