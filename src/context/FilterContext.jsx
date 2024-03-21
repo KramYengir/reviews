@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import PropTypes from "prop-types";
 
 const FilterContext = createContext();
 
@@ -12,4 +13,8 @@ export const FilterProvider = ({ children }) => {
       {children}
     </FilterContext.Provider>
   );
+};
+
+FilterProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
