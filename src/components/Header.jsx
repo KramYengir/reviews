@@ -31,14 +31,14 @@ const Header = () => {
       <nav className="categories">
         <span>Filter reviews by category: </span>
         {data.categories.data.map((category) => (
-          <Link
+          <a
             key={category.id}
-            to={`/category/${category.id}`}
+            // to={`/category/${category.id}`}
             onClick={() => setActiveFilter(category.id)}
             className={category.id == activeFilter ? "active" : ""}
           >
             {category.attributes.name}{" "}
-          </Link>
+          </a>
         ))}
       </nav>
     </header>

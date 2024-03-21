@@ -8,7 +8,6 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import Header from "./components/Header";
 import ReviewDetails from "./pages/ReviewDetails";
-import Category from "./pages/Category";
 import Homepage from "./pages/Homepage";
 import { FilterProvider } from "./context/FilterContext";
 
@@ -36,7 +35,6 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Homepage />} />
               <Route path="/review/:id" element={<ReviewDetails />} />
-              <Route path="/category/:id" element={<Category />} />
             </Route>
           </Routes>
         </ApolloProvider>
