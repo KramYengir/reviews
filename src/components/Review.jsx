@@ -27,7 +27,7 @@ Review.propTypes = {
   title: PropTypes.string.isRequired,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       attributes: PropTypes.shape({
         name: PropTypes.string.isRequired,
       }).isRequired,
