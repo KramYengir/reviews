@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import Review from "../components/Review";
 
