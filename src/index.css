@@ -55,6 +55,14 @@ header h1 {
   border-bottom: 2px solid hsl(var(--clr-red));
 }
 
+header:has(nav.hidden) {
+  margin-bottom: 4rem;
+}
+
+header nav.hidden {
+  display: none;
+}
+
 header nav {
   display: flex;
   justify-content: flex-end;

@@ -38,12 +38,14 @@ const ReviewDetails = () => {
   if (error) return <p>Errrrrrror...</p>;
 
   return (
-    <Review
-      rating={data.review.data.attributes.rating}
-      title={data.review.data.attributes.title}
-      categories={data.review.data.attributes.categories.data}
-      body={data.review.data.attributes.body[0].children}
-    />
+    <div className="review-page">
+      <Review
+        rating={data.review.data.attributes.rating}
+        title={data.review.data.attributes.title}
+        categories={data.review.data.attributes.categories.data}
+        body={data.review.data.attributes.body[0].children}
+      />
+    </div>
   );
 };
 
