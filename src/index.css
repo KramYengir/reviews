@@ -89,6 +89,10 @@ main {
 
   background: hsl(var(--clr-light), 0.95);
   padding: 1rem 2rem 2rem 90px;
+
+  &.masterpiece {
+    outline: 4px solid goldenrod;
+  }
 }
 .review-card .rating {
   position: absolute;
@@ -105,6 +109,10 @@ main {
   background: hsl(var(--clr-red));
   color: hsl(var(--clr-light));
   border-radius: 5px;
+
+  &.masterpiece {
+    background: goldenrod;
+  }
 }
 
 .review-card h2 {

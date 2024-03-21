@@ -2,9 +2,16 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Review = ({ rating, title, categories, body, link }) => {
+  const ratingStyle = () => {
+    if (rating >= 9) return "masterpiece";
+    else if (rating < 9 && rating >= 7) return "good";
+    else if (rating < 7 && rating > 4) return "average";
+    else return "terrible";
+  };
+
   return (
-    <article className="review-card">
-      <div className="rating">{rating}</div>
+    <article className={`review-card ${rating >= 9 && "masterpiece"}`}>
+      <div className={`rating ${ratingStyle()}`}>{rating}</div>
       <h2>{title}</h2>
       {categories.map((category) => (
         <small key={category.id}>{category.attributes.name}</small>
