@@ -33,7 +33,7 @@ const Homepage = () => {
   console.log(data);
 
   return (
-    <>
+    <main>
       {data.reviews.data &&
         data.reviews.data.map((review) => (
           <Review
@@ -45,7 +45,7 @@ const Homepage = () => {
             link={review.id}
           />
         ))}
-    </>
+    </main>
   );
 };
 

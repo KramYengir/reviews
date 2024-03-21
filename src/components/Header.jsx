@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
+import { useFilter } from "../context/FilterContext";
 
 const CATEGORIES = gql`
   query GetCategories {
@@ -15,6 +16,8 @@ const CATEGORIES = gql`
 `;
 
 const Header = () => {
+  const { activeFilter, setActiveFilter } = useFilter();
+
   const { loading, error, data } = useQuery(CATEGORIES);
 
   if (loading) return <p>Loading...</p>;
@@ -22,13 +25,18 @@ const Header = () => {
 
   return (
     <header>
-      <Link to="/">
+      <Link to="/" onClick={() => setActiveFilter(null)}>
         <h1>Mark Reviews</h1>
       </Link>
       <nav className="categories">
         <span>Filter reviews by category: </span>
         {data.categories.data.map((category) => (
-          <Link key={category.id} to={`/category/${category.id}`}>
+          <Link
+            key={category.id}
+            to={`/category/${category.id}`}
+            onClick={() => setActiveFilter(category.id)}
+            className={category.id == activeFilter ? "active" : ""}
+          >
             {category.attributes.name}{" "}
           </Link>
         ))}

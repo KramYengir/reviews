@@ -10,13 +10,14 @@ import Header from "./components/Header";
 import ReviewDetails from "./pages/ReviewDetails";
 import Category from "./pages/Category";
 import Homepage from "./pages/Homepage";
+import { FilterProvider } from "./context/FilterContext";
 
 const Layout = () => {
   return (
-    <>
+    <FilterProvider>
       <Header />
       <Outlet />
-    </>
+    </FilterProvider>
   );
 };
 
@@ -28,7 +29,7 @@ const client = new ApolloClient({
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="container">
       <Router>
         <ApolloProvider client={client}>
           <Routes>
