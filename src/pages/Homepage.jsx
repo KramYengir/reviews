@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
+import Review from "../components/Review";
 
 const REVIEWS = gql`
   query GetReviews {
@@ -36,22 +37,14 @@ const Homepage = () => {
     <>
       {data.reviews.data &&
         data.reviews.data.map((review) => (
-          <div key={review.id} className="review-card">
-            <div className="rating">{review.attributes.rating}</div>
-            <h2>{review.attributes.title}</h2>
-
-            {review.attributes.categories.data.map((category) => (
-              <small key={category.id}>{category.attributes.name}</small>
-            ))}
-
-            <p>
-              {review.attributes.body[0].children.map((child) =>
-                child.text.substring(0, 200)
-              )}
-              ...
-            </p>
-            <Link to={`/review/${review.id}`}>Read More</Link>
-          </div>
+          <Review
+            key={review.id}
+            rating={review.attributes.rating}
+            title={review.attributes.title}
+            categories={review.attributes.categories.data}
+            body={review.attributes.body[0].children}
+            link={review.id}
+          />
         ))}
     </>
   );
