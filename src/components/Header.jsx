@@ -18,7 +18,7 @@ const CATEGORIES = gql`
 const Header = () => {
   const { activeFilter, setActiveFilter } = useFilter();
   const { id } = useParams();
-  console.log("id: ", id);
+  console.log("activefiletr: ", activeFilter, typeof activeFilter);
 
   const { loading, error, data } = useQuery(CATEGORIES);
 
@@ -27,21 +27,29 @@ const Header = () => {
 
   return (
     <header>
-      <Link to="/" onClick={() => setActiveFilter(null)}>
-        <h1>Mark Reviews</h1>
-      </Link>
       <nav className={id ? "hidden" : "categories"}>
-        <span>Filter reviews by category: </span>
-        {data.categories.data.map((category) => (
+        <Link to="/" onClick={() => setActiveFilter(null)}>
+          <h1>Mark Reviews</h1>
+        </Link>
+        <div className="filter">
+          {/* <span>Filter reviews by category: </span> */}
           <a
-            key={category.id}
-            // to={`/category/${category.id}`}
-            onClick={() => setActiveFilter(category.id)}
-            className={category.id == activeFilter ? "active" : ""}
+            onClick={() => setActiveFilter(null)}
+            className={!activeFilter ? "active" : ""}
           >
-            {category.attributes.name}{" "}
+            All
           </a>
-        ))}
+          {data.categories.data.map((category) => (
+            <a
+              key={category.id}
+              // to={`/category/${category.id}`}
+              onClick={() => setActiveFilter(category.id)}
+              className={category.id == activeFilter ? "active" : ""}
+            >
+              {category.attributes.name}{" "}
+            </a>
+          ))}
+        </div>
       </nav>
     </header>
   );

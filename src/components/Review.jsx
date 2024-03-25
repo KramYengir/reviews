@@ -11,7 +11,7 @@ const Review = ({ rating, title, categories, body, link }) => {
   // };
 
   return (
-    <article className={`review-card ${rating >= 9 && "masterpiece"}`}>
+    <article className="review-card">
       <div className="rating">{rating}</div>
       <h2>{title}</h2>
       {categories.map((category) => (

@@ -7,7 +7,7 @@ import {
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import Header from "./components/Header";
-import ReviewDetails from "./pages/ReviewDetails";
+import ReviewPage from "./pages/ReviewPage";
 import Homepage from "./pages/Homepage";
 import { FilterProvider } from "./context/FilterContext";
 
@@ -34,7 +34,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Homepage />} />
-              <Route path="/review/:id" element={<ReviewDetails />} />
+              <Route path="/review/:id" element={<ReviewPage />} />
             </Route>
           </Routes>
         </ApolloProvider>

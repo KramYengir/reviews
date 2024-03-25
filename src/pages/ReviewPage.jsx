@@ -24,7 +24,7 @@ const REVIEW = gql`
   }
 `;
 
-const ReviewDetails = () => {
+const ReviewPage = () => {
   const { id } = useParams();
   const { data, error, loading } = useQuery(REVIEW, {
     variables: {
@@ -49,4 +49,4 @@ const ReviewDetails = () => {
   );
 };
 
-export default ReviewDetails;
+export default ReviewPage;

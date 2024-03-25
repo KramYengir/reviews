@@ -12,7 +12,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 
   list-style: none;
   text-decoration: none;
@@ -40,68 +40,78 @@ h4 {
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
-  border-bottom: 1px dotted;
+  cursor: pointer;
 }
 
 header {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  border-bottom: 2px solid hsl(var(--clr-red));
 }
 
 header h1 {
   font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+
   color: hsl(var(--clr-light));
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid hsl(var(--clr-red));
+  background: hsl(var(--clr-red));
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
-header:has(nav.hidden) {
-  margin-bottom: 4rem;
-}
-
-header nav.hidden {
+header nav.hidden .filter {
   display: none;
 }
 
 header nav {
   display: flex;
-  justify-content: flex-end;
-
-  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 header nav span {
   color: hsl(var(--clr-light));
 }
 
-header nav a {
-  font-size: 1rem;
-  margin-left: 0.8rem;
+header nav .filter {
+  display: flex;
+  gap: 0.5rem;
+}
 
-  color: hsl(var(--clr-light), 0.5);
+header nav .filter a {
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+
+  color: hsl(var(--clr-light));
+  background: hsl(var(--clr-red));
+  /* border-inline: 2px solid hsl(var(--clr-black)); */
+  border-radius: 0.5rem 0.5rem 0 0;
+
+  transition: background 0.3s ease-in-out;
 }
 
 header nav a.active {
   color: hsl(var(--clr-red));
+  background: hsl(var(--clr-light));
 }
 
-/* review list */
+/* homepage*/
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
+
+  padding-block: 2rem 4rem;
 }
 .review-card {
   position: relative;
 
   background: hsl(var(--clr-light), 0.95);
   padding: 1rem 2rem 2rem 90px;
-
-  &.masterpiece {
-    outline: 4px solid goldenrod;
-  }
 }
+
 .review-card .rating {
   position: absolute;
   top: -25px;
@@ -117,10 +127,6 @@ main {
   background: hsl(var(--clr-red));
   color: hsl(var(--clr-light));
   border-radius: 5px;
-
-  &.masterpiece {
-    background: goldenrod;
-  }
 }
 
 .review-card h2 {
@@ -141,5 +147,12 @@ main {
 }
 
 .review-card a {
-  font-size: 0.8rem;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+
+  color: hsl(var(--clr-light));
+  background: hsl(var(--clr-black), 0.75);
+
+  border-bottom: none;
+  /* border-radius: 10px; */
 }
