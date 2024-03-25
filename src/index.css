@@ -127,7 +127,19 @@ main {
   color: hsl(var(--clr-black));
 }
 
+.review-card h3 {
+  margin-top: 1rem;
+}
+
 .review-card small {
   margin-right: 10px;
   color: hsl(var(--clr-red));
+}
+
+.review-card p {
+  padding-block: 0.8rem;
+}
+
+.review-card a {
+  font-size: 0.8rem;
 }
