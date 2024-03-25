@@ -43,7 +43,7 @@ const ReviewDetails = () => {
         rating={data.review.data.attributes.rating}
         title={data.review.data.attributes.title}
         categories={data.review.data.attributes.categories.data}
-        body={data.review.data.attributes.body[0].children}
+        body={data.review.data.attributes.body}
       />
     </div>
   );

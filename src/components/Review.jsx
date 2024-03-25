@@ -16,7 +16,7 @@ const Review = ({ rating, title, categories, body, link }) => {
       {categories.map((category) => (
         <small key={category.id}>{category.attributes.name}</small>
       ))}
-      <p>{body.map((child) => child.text)}</p>
+      <p>{link ? body.substring(0, 400) + "..." : body}</p>
       {link && <Link to={`/review/${link}`}>Read More</Link>}
     </article>
   );
@@ -35,7 +35,13 @@ Review.propTypes = {
   ).isRequired,
   body: PropTypes.arrayOf(
     PropTypes.shape({
-      text: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      children: PropTypes.arrayOf(
+        PropTypes.shape({
+          text: PropTypes.string.isRequired,
+          type: PropTypes.string.isRequired,
+        })
+      ).isRequired,
     })
   ).isRequired,
   link: PropTypes.string,

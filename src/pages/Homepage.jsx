@@ -83,7 +83,7 @@ const Homepage = () => {
           rating={review.attributes.rating}
           title={review.attributes.title}
           categories={review.attributes.categories.data}
-          body={review.attributes.body[0].children}
+          body={review.attributes.body}
           link={review.id}
         />
       ))}
