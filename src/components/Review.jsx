@@ -17,7 +17,7 @@ const Review = ({ rating, title, categories, body, link }) => {
       {categories.map((category) => (
         <small key={category.id}>{category.attributes.name}</small>
       ))}
-      <Markdown>{link ? body.substring(0, 400) + "..." : body}</Markdown>
+      <Markdown>{link ? body.substring(0, 200) + "..." : body}</Markdown>
       {link && <Link to={`/review/${link}`}>Read More</Link>}
     </article>
   );

@@ -6,6 +6,7 @@
   --clr-red: 0, 100%, 42%;
 
   /* FONT-SIZES */
+  --fs-900: clamp(5rem, 10vw + 1rem, 9.375rem);
   --fs-800: 6.25rem;
   --fs-750: 3.8rem;
   --fs-700: 3.5rem;
@@ -22,7 +23,7 @@
 }
 
 /** TABLETS **/
-@media (min-width: 40em) {
+@media (min-width: 40rem) {
   :root {
     --fs-800: 5rem;
     --fs-750: 2.8rem;
@@ -33,7 +34,7 @@
   }
 }
 /** MOBILES **/
-@media (max-width: 40em) {
+@media (max-width: 40rem) {
   :root {
     --fs-900: clamp(5rem, 10vw + 1rem, 9.375rem);
     --fs-800: 3.5rem;
@@ -57,6 +58,10 @@
 
   list-style: none;
   text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -141,23 +146,39 @@ header nav .filter a:focus-visible {
 
 main {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
   gap: 6rem;
 
   padding-block: 2rem 4rem;
 }
 .review-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 
   background: hsl(var(--clr-light), 0.95);
-  padding: 1rem 2rem 2rem 90px;
+  padding: 1rem 2rem 2rem var(--fs-800);
+
+  border-radius: 1rem;
+}
+
+main .review-card {
+  width: clamp(40%, 30em, 60%);
+}
+
+.review-page .review-card {
+  width: 100%;
 }
 
 .review-card .rating {
   position: absolute;
-  top: -25px;
-  left: -25px;
-  width: 90px;
+  top: -15px;
+  left: -15px;
+  width: var(--fs-800);
   aspect-ratio: 1;
 
   display: grid;
@@ -165,17 +186,34 @@ main {
   text-align: center;
   font-size: var(--fs-600);
 
-  background: hsl(var(--clr-red));
+  background: hsl(var(--clr-black));
   color: hsl(var(--clr-light));
+  border: 1px solid hsl(var(--clr-light));
   border-radius: 5px;
+
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 40rem) {
+  .review-card .rating {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: var(--fs-800);
+    aspect-ratio: 1;
+  }
 }
 
 .review-card h2 {
-  color: hsl(var(--clr-black));
+  font-weight: 600;
+  font-size: var(--fs-600);
+  letter-spacing: var(--letter-spacing-s);
 }
 
 .review-card h3 {
+  font-size: var(--fs-500);
   margin-top: 1rem;
+  color: hsl(var(--clr-red), 0.8);
 }
 
 .review-card small {
@@ -186,13 +224,17 @@ main {
 .review-card p {
   padding-block: 0.8rem;
 }
+/* main .review-card p {
+  display: none;
+} */
 
 .review-card a {
+  align-self: flex-end;
   margin-top: 2rem;
-  padding: 0.5rem 1.5rem;
+  padding: 0.8rem 1.5rem;
 
   color: hsl(var(--clr-light));
-  background: hsl(var(--clr-black), 0.75);
+  background: hsl(var(--clr-red), 0.75);
 
   border: none;
   border-radius: 0.5rem;
