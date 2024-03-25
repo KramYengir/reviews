@@ -161,7 +161,7 @@ main {
   align-items: flex-start;
 
   background: hsl(var(--clr-light), 0.95);
-  padding: 1rem 2rem 2rem var(--fs-800);
+  padding: 1rem 2rem 1rem 5.5rem;
 
   border-radius: 1rem;
 }
@@ -174,11 +174,17 @@ main .review-card {
   width: 100%;
 }
 
+@media (max-width: 40rem) {
+  main .review-card {
+    width: 100%;
+  }
+}
+
 .review-card .rating {
   position: absolute;
   top: -15px;
   left: -15px;
-  width: var(--fs-800);
+  width: 5.5ch;
   aspect-ratio: 1;
 
   display: grid;
@@ -199,9 +205,16 @@ main .review-card {
     position: absolute;
     top: -5px;
     left: -5px;
-    width: var(--fs-800);
+    width: 6ch;
     aspect-ratio: 1;
   }
+}
+
+.review-card .rating small {
+  text-transform: uppercase;
+  font-size: var(--fs-200);
+  letter-spacing: var(--letter-spacing-s);
+  color: hsl(var(--clr-light));
 }
 
 .review-card h2 {
@@ -216,17 +229,9 @@ main .review-card {
   color: hsl(var(--clr-red), 0.8);
 }
 
-.review-card small {
-  margin-right: 10px;
-  color: hsl(var(--clr-red));
-}
-
 .review-card p {
   padding-block: 0.8rem;
 }
-/* main .review-card p {
-  display: none;
-} */
 
 .review-card a {
   align-self: flex-end;

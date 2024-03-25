@@ -12,11 +12,14 @@ const Review = ({ rating, title, categories, body, link }) => {
 
   return (
     <article className="review-card">
-      <div className="rating">{rating}</div>
+      <div className="rating">
+        {categories.map((category) => (
+          <small key={category.id}>{category.attributes.name}</small>
+        ))}
+        {rating}
+      </div>
       <h2>{title}</h2>
-      {categories.map((category) => (
-        <small key={category.id}>{category.attributes.name}</small>
-      ))}
+
       <Markdown>{link ? body.substring(0, 200) + "..." : body}</Markdown>
       {link && <Link to={`/review/${link}`}>Read More</Link>}
     </article>
