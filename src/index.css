@@ -52,11 +52,6 @@ header {
 
 header h1 {
   font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-
-  color: hsl(var(--clr-light));
-  background: hsl(var(--clr-red));
-  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 header nav.hidden .filter {
@@ -78,20 +73,23 @@ header nav .filter {
   gap: 0.5rem;
 }
 
-header nav .filter a {
+header nav a {
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
 
   color: hsl(var(--clr-light));
   background: hsl(var(--clr-red));
-  /* border-inline: 2px solid hsl(var(--clr-black)); */
+
+  border: 1px solid hsl(var(--clr-red));
   border-radius: 0.5rem 0.5rem 0 0;
 
-  transition: background 0.3s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 
-header nav a.active {
+header nav a.active,
+header nav .filter a:hover,
+header nav .filter a:focus-visible {
   color: hsl(var(--clr-red));
   background: hsl(var(--clr-light));
 }
@@ -148,11 +146,18 @@ main {
 
 .review-card a {
   margin-top: 2rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
 
   color: hsl(var(--clr-light));
   background: hsl(var(--clr-black), 0.75);
 
-  border-bottom: none;
-  /* border-radius: 10px; */
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.review-card a:hover,
+.review-card a:focus-visible {
+  color: hsl(var(--clr-black));
+  background: hsl(var(--clr-light), 0.75);
+  outline: 1px solid hsl(var(--clr-black));
 }
