@@ -30,7 +30,10 @@ const Header = () => {
     <header>
       <nav className={id ? "hidden" : "categories"}>
         <Link to="/" onClick={() => setActiveFilter(null)}>
-          <h1>Mark Reviews</h1>
+          <h1>
+            <span>Mark</span>
+            <span>Reviews</span>
+          </h1>
         </Link>
         <div className="filter">
           {/* <span>Filter reviews by category: </span> */}

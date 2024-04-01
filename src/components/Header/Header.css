@@ -1,10 +1,16 @@
 header {
   margin-bottom: 4rem;
-  border-bottom: 2px solid var(--clr-primary);
+  border-bottom: 1px solid var(--clr-primary);
 }
 
 header h1 {
-  font-size: var(--fs-500);
+  font-size: var(--fs-600);
+  color: var(--clr-primary);
+
+  & span:last-child {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
 }
 
 header nav.hidden .filter {
@@ -14,11 +20,7 @@ header nav.hidden .filter {
 header nav {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-}
-
-header nav span {
-  color: var(--clr-accent);
+  align-items: center;
 }
 
 header nav .filter {
@@ -26,23 +28,28 @@ header nav .filter {
   gap: 0.5rem;
 }
 
-header nav a {
+header nav .filter a {
   font-weight: 500;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
 
-  color: var(--clr-accent);
+  color: var(--clr-light);
   background: var(--clr-primary);
 
   border: 1px solid var(--clr-primary);
   border-radius: 0.5rem 0.5rem 0 0;
 
-  transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
 
 header nav a.active,
 header nav .filter a:hover,
 header nav .filter a:focus-visible {
   color: var(--clr-primary);
-  background: var(--clr-accent);
+  background: var(--clr-light);
+}
+
+header nav a.active {
+  transform: translateY(100%);
+  border-radius: 0 0 0.5rem 0.5rem;
 }

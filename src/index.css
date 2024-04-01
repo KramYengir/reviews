@@ -2,7 +2,8 @@
 :root {
   /** COLORS **/
   --clr-dark: rgb(29, 29, 29);
-  --clr-accent: rgb(240, 240, 240);
+  --clr-light: rgb(240, 240, 240);
+  --clr-accent: rgb(136, 136, 136);
   --clr-primary: rgb(6, 81, 110);
 
   /* FONT-SIZES */
@@ -70,7 +71,7 @@ body {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   font-size: var(--fs-400);
-  background: var(--clr-dark);
+  background: var(--clr-light);
 }
 
 .container {
