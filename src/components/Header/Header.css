@@ -38,7 +38,9 @@ header nav .filter a {
   background: var(--clr-primary);
 
   border: 1px solid var(--clr-primary);
-  border-radius: 0.5rem 0.5rem 0 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+
+  transform: translateY(100%);
 
   transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
@@ -51,6 +53,6 @@ header nav .filter a:focus-visible {
 }
 
 header nav a.active {
-  transform: translateY(100%);
-  border-radius: 0 0 0.5rem 0.5rem;
+  transform: translateY(0);
+  border-radius: 0.5rem 0.5rem 0 0;
 }
