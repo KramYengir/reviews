@@ -17,7 +17,7 @@
 
 main .review-card {
   width: clamp(40%, 30em, 60%);
-  box-shadow: 0px 0px 15px 5px var(--clr-accent);
+  box-shadow: 0px 0px 20px 1px var(--clr-accent);
 }
 
 .review-card .rating {
@@ -32,7 +32,7 @@ main .review-card {
   text-align: center;
   font-size: var(--fs-600);
 
-  background: var(--clr-dark);
+  background: var(--clr-primary);
   color: var(--clr-light);
   border: 1px solid var(--clr-light);
   border-radius: 5px;

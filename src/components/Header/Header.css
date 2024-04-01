@@ -29,6 +29,7 @@ header nav .filter {
 }
 
 header nav .filter a {
+  font-size: var(--fs-300);
   font-weight: 500;
   text-transform: uppercase;
   padding: 0.5rem 1rem;

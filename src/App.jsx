@@ -22,8 +22,8 @@ const Layout = () => {
 
 // apollo client
 const client = new ApolloClient({
-  // uri: "http://localhost:1337/graphql",
-  uri: "https://reviews-app-5fdae.ondigitalocean.app/graphql",
+  uri: "http://localhost:1337/graphql",
+  // uri: "https://reviews-app-5fdae.ondigitalocean.app/graphql",
   cache: new InMemoryCache(),
 });
 

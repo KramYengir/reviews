@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   /** COLORS **/
-  --clr-dark: rgb(29, 29, 29);
+  --clr-dark: rgb(39, 39, 39);
   --clr-light: rgb(240, 240, 240);
   --clr-accent: rgb(136, 136, 136);
   --clr-primary: rgb(6, 81, 110);
@@ -32,6 +32,7 @@
     --fs-600: 1.5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
+    --fs-300: 0.9275rem;
   }
 }
 /** MOBILES **/
@@ -44,7 +45,7 @@
     --fs-600: 1.25rem;
     --fs-500: 1rem;
     --fs-400: 0.9275rem;
-    --fs-300: 1rem;
+    --fs-300: 0.8rem;
     --fs-200: 0.875rem;
   }
 }

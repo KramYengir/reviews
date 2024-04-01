@@ -18,6 +18,13 @@ const REVIEW = gql`
               }
             }
           }
+          image {
+            data {
+              attributes {
+                formats
+              }
+            }
+          }
         }
       }
     }
@@ -31,8 +38,6 @@ const ReviewPage = () => {
       id: id,
     },
   });
-
-  console.log(data);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Errrrrrror...</p>;

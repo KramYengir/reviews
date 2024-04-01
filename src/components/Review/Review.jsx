@@ -22,7 +22,7 @@ const Review = ({
       </div>
       <h2>{title}</h2>
 
-      <Markdown>{isShort ? body.substring(0, 200) + "..." : body}</Markdown>
+      <Markdown>{isShort ? body.substring(0, 180) + "..." : body}</Markdown>
       <Link to={linkURL}>{linkText}</Link>
     </article>
   );
