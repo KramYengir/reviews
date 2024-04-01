@@ -84,7 +84,9 @@ const Homepage = () => {
           title={review.attributes.title}
           categories={review.attributes.categories.data}
           body={review.attributes.body}
-          link={review.id}
+          linkURL={`/review/${review.id}`}
+          linkText={"Read More"}
+          isShort={true}
         />
       ))}
     </main>

@@ -3,7 +3,15 @@ import PropTypes from "prop-types";
 import Markdown from "react-markdown";
 import "./Review.css";
 
-const Review = ({ rating, title, categories, body, link }) => {
+const Review = ({
+  rating,
+  title,
+  categories,
+  body,
+  linkURL,
+  linkText,
+  isShort,
+}) => {
   return (
     <article className="review-card">
       <div className="rating">
@@ -14,8 +22,8 @@ const Review = ({ rating, title, categories, body, link }) => {
       </div>
       <h2>{title}</h2>
 
-      <Markdown>{link ? body.substring(0, 200) + "..." : body}</Markdown>
-      {link && <Link to={`/review/${link}`}>Read More</Link>}
+      <Markdown>{isShort ? body.substring(0, 200) + "..." : body}</Markdown>
+      <Link to={linkURL}>{linkText}</Link>
     </article>
   );
 };
@@ -32,7 +40,9 @@ Review.propTypes = {
     })
   ).isRequired,
   body: PropTypes.string.isRequired,
-  link: PropTypes.string,
+  linkURL: PropTypes.string.isRequired,
+  linkText: PropTypes.string.isRequired,
+  isShort: PropTypes.bool,
 };
 
 export default Review;

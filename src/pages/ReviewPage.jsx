@@ -44,6 +44,9 @@ const ReviewPage = () => {
         title={data.review.data.attributes.title}
         categories={data.review.data.attributes.categories.data}
         body={data.review.data.attributes.body}
+        linkURL={`/`}
+        linkText={"Go Back"}
+        isShort={false}
       />
     </div>
   );
