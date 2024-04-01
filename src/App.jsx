@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import ReviewPage from "./pages/ReviewPage";
 import Homepage from "./pages/Homepage";
 import { FilterProvider } from "./context/FilterContext";

@@ -1,5 +1,5 @@
 import { useQuery, gql } from "@apollo/client";
-import Review from "../components/Review";
+import Review from "../components/Review/Review";
 import { useFilter } from "../context/FilterContext";
 
 const REVIEWS = gql`

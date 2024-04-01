@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import { useFilter } from "../context/FilterContext";
+import { useFilter } from "../../context/FilterContext";
+import "./Header.css";
 
 const CATEGORIES = gql`
   query GetCategories {
@@ -42,7 +43,6 @@ const Header = () => {
           {data.categories.data.map((category) => (
             <a
               key={category.id}
-              // to={`/category/${category.id}`}
               onClick={() => setActiveFilter(category.id)}
               className={category.id == activeFilter ? "active" : ""}
             >

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import Review from "../components/Review";
+import Review from "../components/Review/Review";
 
 const REVIEW = gql`
   query GetReview($id: ID!) {
