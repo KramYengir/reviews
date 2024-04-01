@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: flex-start;
 
-  background: hsl(var(--clr-light), 0.95);
+  background: var(--clr-accent);
   padding: 1rem 2rem 1rem 5.5rem;
 
   border-radius: 1rem;
@@ -17,9 +17,6 @@
 
 main .review-card {
   width: clamp(40%, 30em, 60%);
-}
-
-@media (max-width: 40rem) {
 }
 
 .review-card .rating {
@@ -34,9 +31,9 @@ main .review-card {
   text-align: center;
   font-size: var(--fs-600);
 
-  background: hsl(var(--clr-black));
-  color: hsl(var(--clr-light));
-  border: 1px solid hsl(var(--clr-light));
+  background: var(--clr-dark);
+  color: var(--clr-accent);
+  border: 1px solid var(--clr-accent);
   border-radius: 5px;
 
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -46,7 +43,7 @@ main .review-card {
   text-transform: uppercase;
   font-size: var(--fs-200);
   letter-spacing: var(--letter-spacing-s);
-  color: hsl(var(--clr-light));
+  color: var(--clr-accent);
 }
 
 .review-card h2 {
@@ -58,7 +55,7 @@ main .review-card {
 .review-card h3 {
   font-size: var(--fs-500);
   margin-top: 1rem;
-  color: hsl(var(--clr-red), 0.8);
+  color: var(--clr-primary);
 }
 
 .review-card p {
@@ -70,8 +67,8 @@ main .review-card {
   margin-top: 2rem;
   padding: 0.8rem 1.5rem;
 
-  color: hsl(var(--clr-light));
-  background: hsl(var(--clr-red), 0.75);
+  color: var(--clr-accent);
+  background: var(--clr-primary);
 
   border: none;
   border-radius: 0.5rem;
@@ -79,9 +76,9 @@ main .review-card {
 
 .review-card a:hover,
 .review-card a:focus-visible {
-  color: hsl(var(--clr-black));
-  background: hsl(var(--clr-light), 0.75);
-  outline: 1px solid hsl(var(--clr-black));
+  color: var(--clr-dark);
+  background: var(--clr-accent);
+  outline: 1px solid var(--clr-dark);
 }
 
 @media (max-width: 40rem) {

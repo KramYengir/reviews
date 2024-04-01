@@ -1,6 +1,6 @@
 header {
   margin-bottom: 4rem;
-  border-bottom: 2px solid hsl(var(--clr-red));
+  border-bottom: 2px solid var(--clr-primary);
 }
 
 header h1 {
@@ -18,7 +18,7 @@ header nav {
 }
 
 header nav span {
-  color: hsl(var(--clr-light));
+  color: var(--clr-accent);
 }
 
 header nav .filter {
@@ -31,10 +31,10 @@ header nav a {
   text-transform: uppercase;
   padding: 0.5rem 1rem;
 
-  color: hsl(var(--clr-light));
-  background: hsl(var(--clr-red));
+  color: var(--clr-accent);
+  background: var(--clr-primary);
 
-  border: 1px solid hsl(var(--clr-red));
+  border: 1px solid var(--clr-primary);
   border-radius: 0.5rem 0.5rem 0 0;
 
   transition: background 0.2s ease-in-out;
@@ -43,6 +43,6 @@ header nav a {
 header nav a.active,
 header nav .filter a:hover,
 header nav .filter a:focus-visible {
-  color: hsl(var(--clr-red));
-  background: hsl(var(--clr-light));
+  color: var(--clr-primary);
+  background: var(--clr-accent);
 }

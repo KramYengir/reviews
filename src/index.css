@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   /** COLORS **/
-  --clr-black: 0, 2%, 11%;
-  --clr-light: 0, 0%, 96%;
-  --clr-red: 0, 100%, 42%;
+  --clr-dark: rgb(29, 29, 29);
+  --clr-accent: rgb(240, 240, 240);
+  --clr-primary: rgb(6, 81, 110);
 
   /* FONT-SIZES */
   --fs-900: clamp(5rem, 10vw + 1rem, 9.375rem);
@@ -42,7 +42,7 @@
     --fs-700: 1.6rem;
     --fs-600: 1.25rem;
     --fs-500: 1rem;
-    --fs-400: 0.9375rem;
+    --fs-400: 0.9275rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
   }
@@ -70,7 +70,7 @@ body {
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
   font-size: var(--fs-400);
-  background: hsl(var(--clr-black), 0.95);
+  background: var(--clr-dark);
 }
 
 .container {
