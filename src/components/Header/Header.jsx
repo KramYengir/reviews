@@ -19,7 +19,6 @@ const CATEGORIES = gql`
 const Header = () => {
   const { activeFilter, setActiveFilter } = useFilter();
   const { id } = useParams();
-  console.log("activefiletr: ", activeFilter, typeof activeFilter);
 
   const { loading, error, data } = useQuery(CATEGORIES);
 

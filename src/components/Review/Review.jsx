@@ -6,18 +6,20 @@ import "./Review.css";
 const Review = ({
   rating,
   title,
-  categories,
+  category,
   body,
+  image,
   linkURL,
   linkText,
   isShort,
 }) => {
   return (
-    <article className="review-card">
+    <article
+      className="review-card"
+      style={{ backgroundImage: `url(${image})` }}
+    >
       <div className="rating">
-        {categories.map((category) => (
-          <small key={category.id}>{category.attributes.name}</small>
-        ))}
+        <small>{category}</small>
         {rating}
       </div>
       <h2>{title}</h2>
@@ -31,15 +33,9 @@ const Review = ({
 Review.propTypes = {
   rating: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      attributes: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-      }).isRequired,
-    })
-  ).isRequired,
   body: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  image: PropTypes.any,
   linkURL: PropTypes.string.isRequired,
   linkText: PropTypes.string.isRequired,
   isShort: PropTypes.bool,

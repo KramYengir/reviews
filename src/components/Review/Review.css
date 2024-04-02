@@ -13,11 +13,17 @@
 
 .review-page .review-card {
   width: 100%;
+  background: none !important;
 }
 
 main .review-card {
   width: clamp(40%, 30em, 60%);
   box-shadow: 0px 0px 20px 1px var(--clr-accent);
+
+  background-color: rgba(0, 0, 0, 0.166);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
 }
 
 .review-card .rating {

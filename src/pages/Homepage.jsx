@@ -19,6 +19,13 @@ const REVIEWS = gql`
               }
             }
           }
+          image {
+            data {
+              attributes {
+                formats
+              }
+            }
+          }
         }
       }
     }
@@ -47,6 +54,13 @@ const REVIEWS_BY_CATEGORY = gql`
                     }
                   }
                 }
+                image {
+                  data {
+                    attributes {
+                      formats
+                    }
+                  }
+                }
               }
             }
           }
@@ -66,14 +80,18 @@ const Homepage = () => {
     }
   );
 
-  console.log(activeFilter);
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
 
   const reviewsData = activeFilter
     ? data.category.data.attributes.reviews.data
     : data.reviews.data;
+
+  const imageBimage =
+    "http://localhost:1337" +
+    reviewsData[0].attributes.image.data.attributes.formats.small.url;
+
+  console.log(imageBimage);
 
   return (
     <main>
@@ -82,8 +100,9 @@ const Homepage = () => {
           key={review.id}
           rating={review.attributes.rating}
           title={review.attributes.title}
-          categories={review.attributes.categories.data}
+          category={review.attributes.categories.data[0].attributes.name}
           body={review.attributes.body}
+          image={imageBimage}
           linkURL={`/review/${review.id}`}
           linkText={"Read More"}
           isShort={true}

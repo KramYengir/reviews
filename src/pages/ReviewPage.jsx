@@ -42,13 +42,20 @@ const ReviewPage = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Errrrrrror...</p>;
 
+  const imageBimage =
+    "http://localhost:1337" +
+    data.review.data.attributes.image.data.attributes.formats.small.url;
+
   return (
     <div className="review-page">
       <Review
         rating={data.review.data.attributes.rating}
         title={data.review.data.attributes.title}
-        categories={data.review.data.attributes.categories.data}
+        category={
+          data.review.data.attributes.categories.data[0].attributes.name
+        }
         body={data.review.data.attributes.body}
+        image={imageBimage}
         linkURL={`/`}
         linkText={"Go Back"}
         isShort={false}
