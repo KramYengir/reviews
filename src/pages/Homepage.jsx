@@ -2,6 +2,9 @@ import { useQuery, gql } from "@apollo/client";
 import Review from "../components/Review/Review";
 import { useFilter } from "../context/FilterContext";
 
+const localURL = "http://localhost:1337";
+const prodURL = "https://reviews-app-5fdae.ondigitalocean.app";
+
 const REVIEWS = gql`
   query GetReviews {
     reviews {
@@ -102,7 +105,9 @@ const Homepage = () => {
           title={review.attributes.title}
           category={review.attributes.categories.data[0].attributes.name}
           body={review.attributes.body}
-          image={imageBimage}
+          image={
+            localURL + review.attributes.image.data.attributes.formats.small.url
+          }
           linkURL={`/review/${review.id}`}
           linkText={"Read More"}
           isShort={true}

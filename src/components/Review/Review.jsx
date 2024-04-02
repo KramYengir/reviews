@@ -18,11 +18,10 @@ const Review = ({
       className="review-card"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <div className="rating">
-        <small>{category}</small>
-        {rating}
-      </div>
+      <div className="rating">{rating}</div>
+      <div className="review-header-fade"></div>
       <h2>{title}</h2>
+      <small>{category}</small>
 
       <Markdown>{isShort ? body.substring(0, 180) + "..." : body}</Markdown>
       <Link to={linkURL}>{linkText}</Link>

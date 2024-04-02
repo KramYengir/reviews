@@ -1,72 +1,79 @@
 .review-card {
   position: relative;
+  isolation: isolate;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
 
-  background: var(--clr-light);
-  padding: 1rem 2rem 1rem 5.5rem;
+  padding: 1.5rem;
 
   border-radius: 1rem;
 }
 
-.review-page .review-card {
-  width: 100%;
-  background: none !important;
-}
+/************************/
+/** REVIEWS ON HOMPAGE **/
+/************************/
 
 main .review-card {
   width: clamp(40%, 30em, 60%);
   box-shadow: 0px 0px 20px 1px var(--clr-accent);
 
-  background-color: rgba(0, 0, 0, 0.166);
+  background-color: rgba(0, 0, 0, 0.12);
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
 }
 
-.review-card .rating {
+main .review-card .review-header-fade {
   position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 5.5ch;
-  aspect-ratio: 1;
+  inset: 0;
+  z-index: -1;
 
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.446953781512605) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+main .review-card .rating {
+  position: absolute;
+  right: 1.5rem;
   display: grid;
   place-content: center;
   text-align: center;
   font-size: var(--fs-600);
 
-  background: var(--clr-primary);
   color: var(--clr-light);
-  border: 1px solid var(--clr-light);
-  border-radius: 5px;
-
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
-.review-card .rating small {
+main .review-card small {
   text-transform: uppercase;
   font-size: var(--fs-200);
   letter-spacing: var(--letter-spacing-s);
   color: var(--clr-light);
 }
 
-.review-card h2 {
+main .review-card h2 {
+  color: var(--clr-light);
   font-weight: 600;
   font-size: var(--fs-600);
   letter-spacing: var(--letter-spacing-s);
 }
 
-.review-card h3 {
-  font-size: var(--fs-500);
+main .review-card h3 {
+  display: none;
+  font-size: var(--fs-400);
   margin-top: 1rem;
-  color: var(--clr-primary);
+
+  color: var(--clr-light);
 }
 
-.review-card p {
-  padding-block: 0.8rem;
+main .review-card p {
+  display: none;
 }
 
 .review-card a {
@@ -88,15 +95,16 @@ main .review-card {
   outline: 1px solid var(--clr-dark);
 }
 
-@media (max-width: 40rem) {
-  .review-card .rating {
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    width: 6ch;
-    aspect-ratio: 1;
-  }
+/***********************/
+/** REVIEW PAGE STYLE **/
+/***********************/
 
+.review-page .review-card {
+  width: 100%;
+  background: none !important;
+}
+
+@media (max-width: 40rem) {
   main .review-card {
     width: 100%;
   }
