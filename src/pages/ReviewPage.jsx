@@ -2,6 +2,9 @@ import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import Review from "../components/Review/Review";
 
+const localURL = "http://localhost:1337";
+const prodURL = "https://reviews-app-5fdae.ondigitalocean.app";
+
 const REVIEW = gql`
   query GetReview($id: ID!) {
     review(id: $id) {
@@ -55,7 +58,10 @@ const ReviewPage = () => {
           data.review.data.attributes.categories.data[0].attributes.name
         }
         body={data.review.data.attributes.body}
-        image={imageBimage}
+        image={
+          prodURL +
+          data.review.data.attributes.image.data.attributes.formats.small.url
+        }
         linkURL={`/`}
         linkText={"Go Back"}
         isShort={false}

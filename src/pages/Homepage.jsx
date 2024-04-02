@@ -106,7 +106,7 @@ const Homepage = () => {
           category={review.attributes.categories.data[0].attributes.name}
           body={review.attributes.body}
           image={
-            localURL + review.attributes.image.data.attributes.formats.small.url
+            prodURL + review.attributes.image.data.attributes.formats.small.url
           }
           linkURL={`/review/${review.id}`}
           linkText={"Read More"}
