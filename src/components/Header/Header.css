@@ -1,16 +1,10 @@
 header {
-  margin-bottom: 4rem;
-  border-bottom: 1px solid var(--clr-primary);
+  border-bottom: 1px solid var(--clr-accent);
 }
 
 header h1 {
   font-size: var(--fs-600);
   color: var(--clr-primary);
-
-  & span:last-child {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
 }
 
 header nav.hidden .filter {
@@ -21,28 +15,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-header nav .filter {
-  display: flex;
-  gap: 0.5rem;
-}
-
-header nav .filter a {
-  font-size: var(--fs-300);
-  font-weight: 500;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-
-  color: var(--clr-light);
-  background: var(--clr-primary);
-
-  border: 1px solid var(--clr-primary);
-  border-radius: 0 0 0.5rem 0.5rem;
-
-  transform: translateY(100%);
-
-  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+  /* padding: 0.5rem 1rem; */
 }
 
 header nav a.active,

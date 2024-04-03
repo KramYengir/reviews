@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
   /** COLORS **/
-  --clr-dark: rgb(39, 39, 39);
+  --clr-dark: #272727;
   --clr-light: rgb(240, 240, 240);
   --clr-accent: rgb(136, 136, 136);
   --clr-primary: rgb(6, 81, 110);
@@ -105,4 +105,21 @@ main {
   gap: 2rem;
 
   padding-block: 2rem 4rem;
+}
+
+main .filter a {
+  font-size: var(--fs-300);
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+
+  color: var(--clr-light);
+  background: var(--clr-primary);
+
+  border: 1px solid var(--clr-primary);
+  border-radius: 0 0 0.5rem 0.5rem;
+
+  transform: translateY(100%);
+
+  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
 }

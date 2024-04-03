@@ -22,25 +22,23 @@ const Layout = () => {
 
 // apollo client
 const client = new ApolloClient({
-  // uri: "http://localhost:1337/graphql",
-  uri: "https://reviews-app-5fdae.ondigitalocean.app/graphql",
+  uri: "http://localhost:1337/graphql",
+  // uri: "https://reviews-app-5fdae.ondigitalocean.app/graphql",
   cache: new InMemoryCache(),
 });
 
 const App = () => {
   return (
-    <div className="container">
-      <Router>
-        <ApolloProvider client={client}>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Homepage />} />
-              <Route path="/review/:id" element={<ReviewPage />} />
-            </Route>
-          </Routes>
-        </ApolloProvider>
-      </Router>
-    </div>
+    <Router>
+      <ApolloProvider client={client}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Homepage />} />
+            <Route path="/review/:id" element={<ReviewPage />} />
+          </Route>
+        </Routes>
+      </ApolloProvider>
+    </Router>
   );
 };
 

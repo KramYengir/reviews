@@ -45,10 +45,6 @@ const ReviewPage = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Errrrrrror...</p>;
 
-  const imageBimage =
-    "http://localhost:1337" +
-    data.review.data.attributes.image.data.attributes.formats.small.url;
-
   return (
     <div className="review-page">
       <Review
@@ -59,7 +55,7 @@ const ReviewPage = () => {
         }
         body={data.review.data.attributes.body}
         image={
-          prodURL +
+          localURL +
           data.review.data.attributes.image.data.attributes.formats.small.url
         }
         linkURL={`/`}

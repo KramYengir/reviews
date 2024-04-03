@@ -74,7 +74,7 @@ const REVIEWS_BY_CATEGORY = gql`
 `;
 
 const Homepage = () => {
-  const { activeFilter } = useFilter();
+  const { activeFilter, setActiveFilter } = useFilter();
 
   const { loading, error, data } = useQuery(
     activeFilter ? REVIEWS_BY_CATEGORY : REVIEWS,
@@ -90,14 +90,31 @@ const Homepage = () => {
     ? data.category.data.attributes.reviews.data
     : data.reviews.data;
 
-  const imageBimage =
-    "http://localhost:1337" +
-    reviewsData[0].attributes.image.data.attributes.formats.small.url;
-
-  console.log(imageBimage);
+  console.log("ActiveFilter: ", activeFilter);
 
   return (
-    <main>
+    <main className="container">
+      <div className="filter">
+        {/* <span>Filter reviews by category: </span> */}
+        <a
+          onClick={() => setActiveFilter(null)}
+          className={!activeFilter ? "active" : ""}
+        >
+          All
+        </a>
+        <a
+          onClick={() => setActiveFilter(2)}
+          className={!activeFilter ? "active" : ""}
+        >
+          Film
+        </a>
+        <a
+          onClick={() => setActiveFilter(3)}
+          className={!activeFilter ? "active" : ""}
+        >
+          Tv
+        </a>
+      </div>
       {reviewsData.map((review) => (
         <Review
           key={review.id}
@@ -106,7 +123,7 @@ const Homepage = () => {
           category={review.attributes.categories.data[0].attributes.name}
           body={review.attributes.body}
           image={
-            prodURL + review.attributes.image.data.attributes.formats.small.url
+            localURL + review.attributes.image.data.attributes.formats.small.url
           }
           linkURL={`/review/${review.id}`}
           linkText={"Read More"}
