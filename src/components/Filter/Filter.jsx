@@ -14,14 +14,14 @@ const Filter = () => {
         All
       </button>
       <button
-        onClick={() => setActiveFilter(2)}
-        className={activeFilter === 2 ? "active" : ""}
+        onClick={() => setActiveFilter(1)}
+        className={activeFilter === 1 ? "active" : ""}
       >
         Film
       </button>
       <button
-        onClick={() => setActiveFilter(3)}
-        className={activeFilter === 3 ? "active" : ""}
+        onClick={() => setActiveFilter(2)}
+        className={activeFilter === 2 ? "active" : ""}
       >
         Tv
       </button>

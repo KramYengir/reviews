@@ -29,6 +29,7 @@ const REVIEW = gql`
               }
             }
           }
+          publishedAt
         }
       }
     }
@@ -56,12 +57,13 @@ const ReviewPage = () => {
         }
         body={data.review.data.attributes.body}
         image={
-          localURL +
+          prodURL +
           data.review.data.attributes.image.data.attributes.formats.small.url
         }
         linkURL={`/`}
         linkText={"Go Back"}
         isCard={false}
+        date={data.review.data.attributes.publishedAt}
       />
     </div>
   );

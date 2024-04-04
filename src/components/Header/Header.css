@@ -20,9 +20,11 @@ header nav {
 
 header nav button {
   display: grid;
-  font-size: var(--fs-700);
+  font-size: var(--fs-750);
   color: var(--clr-primary);
+
   border: none;
+  background: transparent;
 
   z-index: 101;
 }
@@ -38,9 +40,9 @@ header nav ul {
   text-align: center;
   gap: 3.5rem;
 
-  padding-top: 15vh;
+  padding-top: 20vh;
 
-  background-color: rgba(228, 228, 228, 0.75);
+  background-color: rgba(228, 228, 228, 0.85);
   backdrop-filter: blur(4px);
 
   /* transform: translateX(100%); */

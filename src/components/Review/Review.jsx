@@ -11,8 +11,8 @@ const Review = ({
   image,
   linkURL,
   linkText,
-  isCard,
   date,
+  isCard,
 }) => {
   return (
     <article
@@ -49,8 +49,8 @@ Review.propTypes = {
   image: PropTypes.any,
   linkURL: PropTypes.string.isRequired,
   linkText: PropTypes.string.isRequired,
-  isCard: PropTypes.bool,
   date: PropTypes.string.isRequired,
+  isCard: PropTypes.bool,
 };
 
 export default Review;
