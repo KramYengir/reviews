@@ -16,17 +16,56 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0.5rem 1rem; */
 }
 
-header nav a.active,
-header nav .filter a:hover,
-header nav .filter a:focus-visible {
+header nav button {
+  display: grid;
+  font-size: var(--fs-700);
   color: var(--clr-primary);
-  background: var(--clr-light);
+  border: none;
+
+  z-index: 101;
 }
 
-header nav a.active {
-  transform: translateY(0);
-  border-radius: 0.5rem 0.5rem 0 0;
+header nav ul {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  display: none;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+  gap: 3.5rem;
+
+  padding-top: 15vh;
+
+  background-color: rgba(228, 228, 228, 0.75);
+  backdrop-filter: blur(4px);
+
+  /* transform: translateX(100%); */
+
+  transition: opacity 0.3s ease-in-out, transform 1s ease-in-out;
+}
+
+header nav ul[aria-hidden="false"] {
+  display: flex;
+  animation: fade-in 0.3s forwards;
+}
+
+header nav ul li a {
+  font-size: var(--fs-600);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

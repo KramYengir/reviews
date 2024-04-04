@@ -75,6 +75,10 @@ body {
   background: var(--clr-light);
 }
 
+body.disable-scrolling {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1200px;
   margin-inline: auto;
