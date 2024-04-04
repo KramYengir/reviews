@@ -1,6 +1,9 @@
 import { useQuery, gql } from "@apollo/client";
-import Review from "../components/Review/Review";
-import { useFilter } from "../context/FilterContext";
+import { useFilter } from "../../context/FilterContext";
+import Review from "../../components/Review/Review";
+import Filter from "../../components/Filter/Filter";
+import Sorting from "../../components/Sorting/Sorting";
+import "./Homepage.css";
 
 const localURL = "http://localhost:1337";
 const prodURL = "https://reviews-app-5fdae.ondigitalocean.app";
@@ -29,6 +32,7 @@ const REVIEWS = gql`
               }
             }
           }
+          publishedAt
         }
       }
     }
@@ -64,6 +68,7 @@ const REVIEWS_BY_CATEGORY = gql`
                     }
                   }
                 }
+                publishedAt
               }
             }
           }
@@ -74,7 +79,7 @@ const REVIEWS_BY_CATEGORY = gql`
 `;
 
 const Homepage = () => {
-  const { activeFilter, setActiveFilter } = useFilter();
+  const { activeFilter } = useFilter();
 
   const { loading, error, data } = useQuery(
     activeFilter ? REVIEWS_BY_CATEGORY : REVIEWS,
@@ -90,30 +95,11 @@ const Homepage = () => {
     ? data.category.data.attributes.reviews.data
     : data.reviews.data;
 
-  console.log("ActiveFilter: ", activeFilter);
-
   return (
     <main className="container">
-      <div className="filter">
-        {/* <span>Filter reviews by category: </span> */}
-        <a
-          onClick={() => setActiveFilter(null)}
-          className={!activeFilter ? "active" : ""}
-        >
-          All
-        </a>
-        <a
-          onClick={() => setActiveFilter(2)}
-          className={!activeFilter ? "active" : ""}
-        >
-          Film
-        </a>
-        <a
-          onClick={() => setActiveFilter(3)}
-          className={!activeFilter ? "active" : ""}
-        >
-          Tv
-        </a>
+      <div className="options">
+        <Sorting />
+        <Filter />
       </div>
       {reviewsData.map((review) => (
         <Review
@@ -126,8 +112,9 @@ const Homepage = () => {
             localURL + review.attributes.image.data.attributes.formats.small.url
           }
           linkURL={`/review/${review.id}`}
-          linkText={"Read More"}
-          isShort={true}
+          linkText={"Read"}
+          isCard={true}
+          date={review.attributes.publishedAt}
         />
       ))}
     </main>

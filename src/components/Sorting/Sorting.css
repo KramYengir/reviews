@@ -1,0 +1,10 @@
+.sorting {
+  display: grid;
+  place-content: center;
+
+  font-size: var(--fs-700);
+}
+
+.sorting svg {
+  color: var(--clr-primary);
+}

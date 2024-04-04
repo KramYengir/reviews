@@ -16,7 +16,7 @@
 /************************/
 
 main .review-card {
-  width: clamp(40%, 30em, 60%);
+  width: min(90vw, 400px);
   box-shadow: 2px 2px 15px 1px var(--clr-accent);
 
   background-color: rgba(0, 0, 0, 0.12);
@@ -34,19 +34,22 @@ main .review-card .review-header-fade {
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.446953781512605) 40%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 0.246953781512605) 50%,
+    rgba(0, 0, 0, 0.45) 100%
   );
 }
 
-main .review-card .rating {
-  position: absolute;
-  right: 1.5rem;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  font-size: var(--fs-600);
+main .review-card .card__top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
+main .review-card h2 {
+  font-weight: 600;
+  font-size: var(--fs-600);
+  letter-spacing: var(--letter-spacing-s);
+  text-wrap: wrap;
   color: var(--clr-light);
 }
 
@@ -57,11 +60,12 @@ main .review-card small {
   color: var(--clr-light);
 }
 
-main .review-card h2 {
-  color: var(--clr-light);
+main .review-card .rating {
   font-weight: 600;
+
   font-size: var(--fs-600);
-  letter-spacing: var(--letter-spacing-s);
+
+  color: var(--clr-light);
 }
 
 main .review-card h3 {
@@ -76,13 +80,27 @@ main .review-card p {
   display: none;
 }
 
-.review-card a {
-  align-self: flex-end;
-  margin-top: 2rem;
-  padding: 0.8rem 1.5rem;
+main .review-card .card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 2.5rem;
+}
 
-  color: var(--clr-light);
-  background: var(--clr-primary);
+.review-card .card__bottom small {
+  font-size: var(--fs-300);
+}
+
+.review-card a {
+  font-weight: 500;
+  text-transform: uppercase;
+
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+
+  color: var(--clr-primary);
+  background: var(--clr-light);
 
   border: none;
   border-radius: 0.5rem;
@@ -90,9 +108,8 @@ main .review-card p {
 
 .review-card a:hover,
 .review-card a:focus-visible {
-  color: var(--clr-dark);
-  background: var(--clr-light);
-  outline: 1px solid var(--clr-dark);
+  color: var(--clr-light);
+  background: var(--clr-primary);
 }
 
 /***********************/

@@ -1,0 +1,15 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+
+  padding-inline: 1rem;
+  padding-bottom: 4rem;
+}
+
+main .options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

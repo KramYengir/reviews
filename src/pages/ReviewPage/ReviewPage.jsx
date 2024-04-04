@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import Review from "../components/Review/Review";
+import Review from "../../components/Review/Review";
+import "./ReviewPage.css";
 
 const localURL = "http://localhost:1337";
 const prodURL = "https://reviews-app-5fdae.ondigitalocean.app";
@@ -60,7 +61,7 @@ const ReviewPage = () => {
         }
         linkURL={`/`}
         linkText={"Go Back"}
-        isShort={false}
+        isCard={false}
       />
     </div>
   );

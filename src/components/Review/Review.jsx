@@ -11,20 +11,32 @@ const Review = ({
   image,
   linkURL,
   linkText,
-  isShort,
+  isCard,
+  date,
 }) => {
   return (
     <article
       className="review-card"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <div className="rating">{rating}</div>
       <div className="review-header-fade"></div>
-      <h2>{title}</h2>
-      <small>{category}</small>
+      <div className="card__top">
+        <div>
+          <h2>
+            {isCard && title.length > 22
+              ? title.substring(0, 23) + "..."
+              : title}
+          </h2>
+          <small>{category}</small>
+        </div>
+        <div className="rating">{rating}</div>
+      </div>
 
-      <Markdown>{isShort ? body.substring(0, 180) + "..." : body}</Markdown>
-      <Link to={linkURL}>{linkText}</Link>
+      <Markdown>{isCard ? body.substring(0, 180) + "..." : body}</Markdown>
+      <div className="card__bottom">
+        <small>{date.substring(0, 10)}</small>
+        <Link to={linkURL}>{linkText}</Link>
+      </div>
     </article>
   );
 };
@@ -37,7 +49,8 @@ Review.propTypes = {
   image: PropTypes.any,
   linkURL: PropTypes.string.isRequired,
   linkText: PropTypes.string.isRequired,
-  isShort: PropTypes.bool,
+  isCard: PropTypes.bool,
+  date: PropTypes.string.isRequired,
 };
 
 export default Review;

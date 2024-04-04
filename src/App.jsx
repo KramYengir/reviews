@@ -7,8 +7,8 @@ import {
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import Header from "./components/Header/Header";
-import ReviewPage from "./pages/ReviewPage";
-import Homepage from "./pages/Homepage";
+import ReviewPage from "./pages/ReviewPage/ReviewPage";
+import Homepage from "./pages/Homepage/Homepage";
 import { FilterProvider } from "./context/FilterContext";
 
 const Layout = () => {
